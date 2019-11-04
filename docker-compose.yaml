@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  go:
+    build:
+      context: ./go
+    ports:
+      - "8080:1323"
+    environment:
+      # - MODE=release
+      - GITHUB_ORGANIZATION=rspepe
+      - GITHUB_REPOSITORY=docker-compose-go-echo
+    volumes:
+      - "./go/src/:/src:delegated"
